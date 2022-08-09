@@ -37,7 +37,7 @@ int _format(const char *format, va_list fmt)
 				length += _putchar(format[j]);
 			else if (format[j] == ' ')
 				length += _putchar(format[j]);
-			else if (format == '\0')
+			else if (format[j] == '\0')
 				;
 			else
 			{
