@@ -3,9 +3,9 @@
 #include <stdarg.h>
 
 /**
- * struct dir - Struct dir
+ * struct spc - Struct dir
  *
- * @dir: the specifier
+ * @spc: the specifier
  * @f: the associated function
 */
 
