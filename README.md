@@ -12,11 +12,11 @@ The **_printf** is a variadic( takes variable number of arguments) function the 
 
 The function maybe both be called with a single argument, as in 
 
-**_printf("Hello, World"); **// returns: Hello, World
+_printf("Hello, World"); **// returns: Hello, World
 
  or with variable number of arguments, as in 
 
-**_printf("Hey, [%s]", "Saviour"); **// returns: Hey, Saviour. The character **%** is a special character, specificing that the corresponding argument be print to the output. **s** is a conversion specifier, and in this case requires a string type.
+_printf("Hey, [%s]", "Saviour"); **// returns: Hey, Saviour. The character **%** is a special character, specificing that the corresponding argument be print to the output. **s** is a conversion specifier, and in this case requires a string type.
 The other conversion specifiers are; **c** of the  type char, **%** use to escape the percent sign **%**, **d** or **i** for the integer type, **f** for float type.
 
 ## The functions
