@@ -6,7 +6,7 @@
 /**
  * _format - format my _printf()
  * @format: pointer to the format  string
- *
+ * @fmt: variable list
  * Return: 0 on success
  */
 int _format(const char *format, va_list fmt)
