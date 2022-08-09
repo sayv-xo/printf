@@ -31,16 +31,14 @@ int _format(const char *format, va_list fmt)
 			j++;
 			if (!(format[j]))
 				return (-1);
-			if (format[j] == 'c')
+			else if (format[j] == 'c')
 				length += spec[0].f(fmt);
 			else if (format[j] == 's')
 				length += spec[1].f(fmt);
 			else if (format[j] == '%')
 				length += _putchar(format[j]);
 			else if (format[j] == ' ')
-			       length += _putchar(format[j]);
-			else if (format[j] == '\0')
-				break;
+				length += _putchar(format[j]);
 			else
 			{
 				length += _putchar(format[j - 1]);
