@@ -27,11 +27,22 @@ int s_spec(va_list fmt)
 	int i, length;
 
 	i = 0;
-	while (s[i])
+	length = 0;
+	if (s != NULL)
 	{
-		length += _putchar(s[i]);
-		i++;
+		while (s[i])
+		{
+			length += _putchar(s[i]);
+			i++;
+		}
+		return (length);
 	}
+	length += _putchar('(');
+	length += _putchar('n');
+	length += _putchar('u');
+	length += _putchar('l');
+	length += _putchar('l');
+	length += _putchar(')');
 	return (length);
 }
 
