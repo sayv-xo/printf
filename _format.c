@@ -29,6 +29,8 @@ int _format(const char *format, va_list fmt)
 		else
 		{
 			j++;
+			if (!(format[j]))
+				return (-1);
 			if (format[j] == 'c')
 				length += spec[0].f(fmt);
 			else if (format[j] == 's')
