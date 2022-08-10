@@ -11,12 +11,13 @@
  */
 int _format(const char *format, va_list fmt)
 {
-	int j;
+	int j, index;
 	int length = 0;
 	spc_f spec[] = {
 		{"c", c_spec},
 		{"s", s_spec},
-		{NULL, NULL}
+		{"d", d_spec},
+		{"i", d_spec},
 	};
 
 	j = 0;
@@ -29,12 +30,14 @@ int _format(const char *format, va_list fmt)
 		else
 		{
 			j++;
-			if (!(format[j]))
+			if (is_spec(format[j]) >= 0)
+			{
+				index = 0;
+				index += is_spec(format[j]);
+				length += spec[index].f(fmt);
+			}
+			else if (!(format[j]))
 				return (-1);
-			else if (format[j] == 'c')
-				length += spec[0].f(fmt);
-			else if (format[j] == 's')
-				length += spec[1].f(fmt);
 			else if (format[j] == '%')
 				length += _putchar(format[j]);
 			else
@@ -49,3 +52,25 @@ int _format(const char *format, va_list fmt)
 	}
 	return (length);
 }
+
+/**
+ * is_spec - test if a char is a specifier
+ * @c: take a char from the format array
+ *
+ * Return: 0 or index;
+ */
+int is_spec(char c)
+{
+	char arr[] = {'c', 's', 'd', 'i', '\0'};
+	int i;
+
+	i = 0;
+	while (arr[i])
+	{
+		if (arr[i] == c)
+			return (i);
+		i++;
+	}
+	return (-1);
+}
+

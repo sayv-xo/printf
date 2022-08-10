@@ -20,5 +20,7 @@ int _printf(const char *format, ...);
 int _format(const char *format, va_list fmt);
 int c_spec(va_list fmt);
 int s_spec(va_list fmt);
+int d_spec(va_list fmt);
+int is_spec(char c);
 
 #endif
