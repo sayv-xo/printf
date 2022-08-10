@@ -60,8 +60,13 @@ int d_spec(va_list fmt)
 
 	power10 = 1;
 	length = 0;
-	if (num > 0)
+	if (num != 0)
 	{
+		if (num < 0)
+		{
+			length += _putchar('-');
+			num = num * (-1);
+		}
 		numcpy = num;
 		while (numcpy / 10 != 0)
 		{
@@ -77,20 +82,6 @@ int d_spec(va_list fmt)
 		}
 		return (length);
 	}
-	num = num * (-1);
-	numcpy = num;
-	length += _putchar('-');
-	while (numcpy / 10 != 0)
-	{
-		power10 *= 10;
-		numcpy = numcpy / 10;
-	}
-	while (power10 != 0)
-	{
-		placeval = num / power10;
-		length += _putchar('0' + placeval);
-		num = num % power10;
-		power10 = power10 / 10;
-	}
+	length += _putchar('0');
 	return (length);
 }
