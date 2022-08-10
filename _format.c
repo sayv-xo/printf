@@ -37,10 +37,11 @@ int _format(const char *format, va_list fmt)
 				length += spec[1].f(fmt);
 			else if (format[j] == '%')
 				length += _putchar(format[j]);
-			else if (format[j] == ' ' && !(format[j + 1]))
+			else if (format[j] == ' ')
 			{
+				length += _putchar('%');
 				length += _putchar(format[j]);
-				return (-1);
+				j++;
 			}
 			else
 			{
