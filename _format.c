@@ -20,8 +20,9 @@ int _format(const char *format, va_list fmt)
 		{"i", d_spec},
 	};
 
-	j = 0;
-	while (format[j])
+	if (format == NULL)
+		return (-1);
+	for (j = 0; format[j]; j++)
 	{
 		if (format[j] != '%')
 		{
@@ -48,7 +49,6 @@ int _format(const char *format, va_list fmt)
 					j++;
 			}
 		}
-		j++;
 	}
 	return (length);
 }
