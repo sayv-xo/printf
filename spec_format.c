@@ -76,6 +76,8 @@ int d_spec(va_list fmt)
 		while (power10 != 0)
 		{
 			placeval = num / power10;
+			if (placeval < 0)
+				placeval = -placeval;
 			length += _putchar('0' + placeval);
 			num = num % power10;
 			power10 = power10 / 10;
