@@ -18,6 +18,8 @@ int _format(const char *format, va_list fmt)
 		{"s", s_spec},
 		{"d", d_spec},
 		{"i", d_spec},
+		{"b", b_spec},
+		{"u", d_spec}
 	};
 
 	if (format == NULL)
@@ -25,9 +27,7 @@ int _format(const char *format, va_list fmt)
 	for (j = 0; format[j]; j++)
 	{
 		if (format[j] != '%')
-		{
 			length += _putchar(format[j]);
-		}
 		else
 		{
 			j++;
@@ -61,7 +61,7 @@ int _format(const char *format, va_list fmt)
  */
 int is_spec(char c)
 {
-	char arr[] = {'c', 's', 'd', 'i', '\0'};
+	char arr[] = {'c', 's', 'd', 'i', 'b', 'u', '\0'};
 	int i;
 
 	i = 0;

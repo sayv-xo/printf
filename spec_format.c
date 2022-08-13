@@ -87,3 +87,54 @@ int d_spec(va_list fmt)
 	length += _putchar('0');
 	return (length);
 }
+
+/**
+ * b_spec - the unsigned int argument is converted to binary
+ * @fmt: va_list array
+ *
+ * Return: int on success
+ */
+int b_spec(va_list fmt)
+{
+	int num = va_arg(fmt, int);
+	int len, i, bitnum, p, numcpy;
+
+	p = 2;
+	bitnum = 1;
+	numcpy = num;
+	i = 0;
+	len = 0;
+	if (num < 0)
+		num = num * (-1);
+	while (p <= num)
+	{
+		p *= 2;
+		bitnum++;
+	}
+	if (numcpy < 0)
+	{
+		while (i < (32 - bitnum))
+		{
+			_putchar('1');
+			i++;
+		}
+	}
+	binary(num);
+	len += bitnum;
+	if (numcpy < 0)
+		return (32);
+	return (len); 
+}
+
+/**
+ * binary - binary converter
+ * @n: integer argument
+ *
+ * Description: write a binaray number into stack
+ */
+void binary(int n)
+{
+	if (n > 1)
+		binary(n / 2);
+	_putchar('0' + (n % 2));
+}

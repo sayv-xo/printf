@@ -16,11 +16,13 @@ typedef struct spc
 } spc_f;
 
 int _putchar(char c);
-int _printf(const char *format, ...);
 int _format(const char *format, va_list fmt);
 int c_spec(va_list fmt);
 int s_spec(va_list fmt);
 int d_spec(va_list fmt);
 int is_spec(char c);
+int b_spec(va_list fmt);
+int _printf(const char *format, ...);
+void binary(int n);
 
 #endif
