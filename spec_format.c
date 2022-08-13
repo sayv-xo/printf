@@ -123,7 +123,7 @@ int b_spec(va_list fmt)
 	len += bitnum;
 	if (numcpy < 0)
 		return (32);
-	return (len); 
+	return (len);
 }
 
 /**
